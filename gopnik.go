@@ -625,7 +625,7 @@ func bootstrapDb() (*sql.DB, error) {
 			return db, err
 		}
 
-		_, err = db.Exec(`
+		_, err = tx.Exec(`
 		CREATE TABLE IF NOT EXISTS TimezonePreferences (
 			id INTEGER NOT NULL PRIMARY KEY,
 			who TEXT NOT NULL,
